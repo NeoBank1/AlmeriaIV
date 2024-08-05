@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', function() {
   } else {
     // Set initial balance and transfer count if not present in localStorage
     localStorage.setItem('balance', 925374.21);
-    localStorage.setItem('transferCount', 100);
+    localStorage.setItem('transferCount', 200);
     balanceElement.textContent = 'Available balance: $925374.21';
   }
 });
@@ -16,7 +16,7 @@ document.getElementById('continue-button').addEventListener('click', function() 
   var balanceElement = document.getElementById('balance');
   var amountInput = document.getElementById('amount-input');
   var messageElement = document.getElementById('error-message');
-  var transferCount = parseInt(localStorage.getItem('transferCount')) || 100;
+  var transferCount = parseInt(localStorage.getItem('transferCount')) || 200;
 
   var balanceText = balanceElement.textContent;
   var balance = parseFloat(balanceText.replace(/[^\d.-]/g, ''));
@@ -34,7 +34,7 @@ document.getElementById('continue-button').addEventListener('click', function() 
     messageElement.style.display = 'block';
     messageElement.style.color = 'red';
   } else {
-    if (transferCount >= 100) {
+    if (transferCount >= 200) {
       messageElement.textContent = 'Service temporarily unavailable, try again later.';
       messageElement.style.display = 'block';
       messageElement.style.color = 'red';
